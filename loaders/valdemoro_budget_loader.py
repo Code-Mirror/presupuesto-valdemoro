@@ -6,7 +6,7 @@ import csv
 import os
 import re
 
-class PintoBudgetLoader(SimpleBudgetLoader):
+class ValdemoroBudgetLoader(SimpleBudgetLoader):
 
     # An artifact of the in2csv conversion of the original XLS files is a trailing '.0', which we remove here
     def clean(self, s):
@@ -74,5 +74,5 @@ class PintoBudgetLoader(SimpleBudgetLoader):
         InstitutionalCategory(  institution='1',
                                 section='10',
                                 department='100',
-                                description='Ayuntamiento de Pinto',
+                                description='Ayuntamiento de Valdemoro',
                                 budget=budget).save()
