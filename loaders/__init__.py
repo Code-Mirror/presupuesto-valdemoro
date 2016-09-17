@@ -1,2 +1,2 @@
-from pinto_budget_loader import PintoBudgetLoader
-from pinto_payments_loader import PintoPaymentsLoader
+from valdemoro_budget_loader import ValdemoroBudgetLoader
+from valdemoro_payments_loader import ValdemoroPaymentsLoader

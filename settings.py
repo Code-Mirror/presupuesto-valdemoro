@@ -3,10 +3,10 @@
 from django.conf.urls import patterns, url
 
 MAIN_ENTITY_LEVEL = 'municipio'
-MAIN_ENTITY_NAME = 'Pinto'
+MAIN_ENTITY_NAME = 'Valdemoro'
 
-BUDGET_LOADER = 'PintoBudgetLoader'
-PAYMENTS_LOADER = 'PintoPaymentsLoader'
+BUDGET_LOADER = 'ValdemoroBudgetLoader'
+PAYMENTS_LOADER = 'ValdemoroPaymentsLoader'
 
 FEATURED_PROGRAMMES = ['9240', '4910', '4930']
 
@@ -66,7 +66,7 @@ LANGUAGES = (
 )
 
 # Setup Data Source Budget link
-DATA_SOURCE_BUDGET      = 'http://www.ayto-pinto.es/presupuestos-municipales-2015'
+DATA_SOURCE_BUDGET      = 'http://www.valdemoro.es/presupuestos1'
 
 # Setup Data Source Population link
 DATA_SOURCE_POPULATION  = 'http://www.ine.es/jaxiT3/Tabla.htm?t=2861'
@@ -75,13 +75,13 @@ DATA_SOURCE_POPULATION  = 'http://www.ine.es/jaxiT3/Tabla.htm?t=2861'
 DATA_SOURCE_INFLATION   = 'http://www.ine.es/jaxiT3/Tabla.htm?t=10019&L=0'
 
 # Setup Main Entity Web Url
-MAIN_ENTITY_WEB_URL     = 'http://www.ayto-pinto.es/'
+MAIN_ENTITY_WEB_URL     = 'http://www.valdemoro.es/'
 
 # Setup Main Entity Legal Url (if empty we hide the link)
-MAIN_ENTITY_LEGAL_URL   = 'http://www.ayto-pinto.es/web/ayuntamiento-de-pinto/aviso-legal'
+MAIN_ENTITY_LEGAL_URL   = 'http://www.valdemoro.es/aviso-legal'
 
 # External URL for Cookies Policy (if empty we use out template page/cookies.html)
-COOKIES_URL             = 'http://www.ayto-pinto.es/web/ayuntamiento-de-pinto/aviso-legal'
+COOKIES_URL             = 'http://www.valdemoro.es/politica-de-cookies'
 
 # Allow overriding of default treemap color scheme
 COLOR_SCALE = [ '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#e7969c', '#bcbd22', '#17becf' ]
