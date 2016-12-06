@@ -10,8 +10,6 @@ PAYMENTS_LOADER = 'ValdemoroPaymentsLoader'
 
 FEATURED_PROGRAMMES = ['9240', '4910', '4930']
 
-OVERVIEW_INCOME_NODES = []
-OVERVIEW_EXPENSE_NODES = []
 OVERVIEW_INCOME_NODES = [
                           {
                             'nodes': [['11', '113']],
