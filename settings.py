@@ -40,7 +40,6 @@ OVERVIEW_INCOME_NODES = [
                           '91'
                         ]
 OVERVIEW_EXPENSE_NODES = ['13', '15', '16', '92', '93', '91', '32', '23', '24', '34', '33', '44', '17', '01']
-#OVERVIEW_EXPENSE_NODES = ['45', '13', '92', '32', '23', '34', '33', '17', '01']
 
 # How aggresive should the Sankey diagram reorder the nodes. Default: 0.79 (Optional)
 # Note: 0.5 usually leaves nodes ordered as defined. 0.95 sorts by size (decreasing).
