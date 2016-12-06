@@ -10,23 +10,39 @@ PAYMENTS_LOADER = 'ValdemoroPaymentsLoader'
 
 FEATURED_PROGRAMMES = ['9240', '4910', '4930']
 
+OVERVIEW_INCOME_NODES = []
+OVERVIEW_EXPENSE_NODES = []
 OVERVIEW_INCOME_NODES = [
                           {
                             'nodes': [['11', '113']],
-                            'label': 'Sobre bienes inmuebles de naturaleza urbana'
+                            'label': 'IMPUESTO SOBRE BIENES INMUEBLES DE NATURALEZA URBANA'
                           },
-                          '13', '42', '45',
+                          '13', 
+                          {
+                            'nodes': [['30', '302']],
+                            'label': 'TASA DE REOCGIDA DE BASURAS'
+                          },
+			{
+				'nodes': ['30', '31', '32'],
+				'label': 'OTRAS TASAS Y PRECIOS PÚBLICOS'
+			},
+			'33', '34', '42', '45',
+                          {
+                            'nodes': [['29', '290']],
+                            'label': 'IMPUESTO SOBRE CONSTRUCCIONES, INSTALACIONES Y OBRAS'
+                          },
                           {
                             'nodes': [['11', '115']],
-                            'label': 'Impuesto sobre vehículos de tracción mecánica'
+                            'label': 'IMPUESTOS SOBRE VEHÍCULOS DE TRACCIÓN MECÁNICA'
                           },
                           {
                             'nodes': [['11', '116']],
-                            'label': 'Impuesto sobre incremento del valor de los terrenos de naturaleza urbana'
+                            'label': 'IMPUESTO SOBRE INCREMENTO DEL VALOR DE LOS TERRENOS DE NATURALEZA URBANA'
                           },
                           '91'
                         ]
-OVERVIEW_EXPENSE_NODES = ['45', '13', '92', '32', '23', '34', '33', '17', '01']
+OVERVIEW_EXPENSE_NODES = ['13', '15', '16', '92', '93', '91', '32', '23', '24', '34', '33', '44', '17', '01']
+#OVERVIEW_EXPENSE_NODES = ['45', '13', '92', '32', '23', '34', '33', '17', '01']
 
 # How aggresive should the Sankey diagram reorder the nodes. Default: 0.79 (Optional)
 # Note: 0.5 usually leaves nodes ordered as defined. 0.95 sorts by size (decreasing).
