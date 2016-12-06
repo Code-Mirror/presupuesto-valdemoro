@@ -10,75 +10,98 @@
     </div>
     <div class="select-info">{{ _('IBI') }}: <span id="select-house-tax"></span></div>
     <div class="form-group" style="clear: both">
-      <label for="select-house-bonus">{{ _('Bonificación IBI') }}</label>
+      <label for="select-house-bonus">{{ _('¿Disfrutas de alguna de las siguientes bonificaciones del IBI?') }}</label>
       <select id="select-house-bonus" class="form-control">
         <option value="0" type="text" selected="selected">{{ _('Ninguna') }}</option>
         <option value="1" type="text">{{ _('Vivienda protección pública (3 primeros años)') }}</option>
-        <option value="2" type="text">{{ _('Vivienda protección pública (de 4 a 6 años e ingresos familiares <52.000 €/año)') }}</option>
-        <option value="3" type="text">{{ _('Vivienda protección pública (de 7 a 10 años e ingresos familiares <20.000 €/año)') }}</option>
-        <option value="4" type="text">{{ _('Energía solar 50% suministro total (durante 4 años)') }}</option>
-        <option value="5" type="text">{{ _('Familia Numerosa General y valor catastral hasta 70.000€') }}</option>
-        <option value="6" type="text">{{ _('Familia Numerosa General y valor catastral de 70.000€ a 200.000€') }}</option>
-        <option value="7" type="text">{{ _('Familia Numerosa Especial y valor catastral hasta 70.000€') }}</option>
-        <option value="8" type="text">{{ _('Familia Numerosa Especial y valor catastral de 70.000€ a 200.000€') }}</option>
+        <option value="2" type="text">{{ _('Aprovechamiento energía solar (hasta 2016)') }}</option>
+        <option value="3" type="text">{{ _('Familia Numerosa General y valor catastral hasta 90.000€') }}</option>
+        <option value="4" type="text">{{ _('Familia Numerosa General y valor catastral de 90.000€ a 150.000€') }}</option>
+        <option value="5" type="text">{{ _('Familia Numerosa General y valor catastral superior a 150.000€') }}</option>
+        <option value="6" type="text">{{ _('Familia Numerosa Especial y valor catastral hasta 90.000€') }}</option>
+        <option value="7" type="text">{{ _('Familia Numerosa Especial y valor catastral de 90.000€ a 150.000€') }}</option>
+        <option value="8" type="text">{{ _('Familia Numerosa Especial y valor catastral superior a 150.000€') }}</option>
       </select>
     </div>
   </div>
     
   <div class="row">
     <div class="form-group">
-      <label for="select-vehicle">{{ _('Vehículo') }}</label>
+      <label for="select-garbage">{{ _('¿Pagas tasa de basuras?') }}</label>
+      <select id="select-garbage" class="form-control">
+        <option value="0" type="text" selected="selected">{{ _('No') }}</option>
+        <option value="1" type="text">{{ _('Sí') }}</option>
+      </select>
+    </div>
+    <div class="select-info">{{ _('Tasa de basuras') }}: <span id="select-garbage-tax"></span></div>
+    <div class="checkbox">
+      <label>
+        <input id="check-garbage-bonus" type="checkbox">{{ _('¿Todos los miembros de la familia son parados de larga duración o ninguno percibe más de 1,5 veces el SMI?') }}
+      </label>
+    </div>
+    <div class="form-group select-garbage-bonus-cont" style="display: none">
+      <label for="select-garbage-bonus">{{ _('Bonificacion de la tasa de basuras') }}</label>
+      <select id="select-garbage-bonus" class="form-control">
+        <option value="0" type="text" selected="selected">{{ _('Todos los miembros de la familia mayores de 18 años son parados de larga duración') }}</option>
+        <option value="1" type="text">{{ _('Ningún miembro familiar percibe más de 1,5 veces el SMI') }}</option>
+      </select>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="form-group">
+      <label for="select-vehicle">{{ _('¿Tienes un vehículo?') }}</label>
       <select id="select-vehicle" class="form-control">
         <option value="0" type="text" selected="selected">{{ _('Ninguno') }}</option>
-        <option value="1" type="text">{{ _('Coche muy pequeño (menos de 8 caballos fiscales)') }}</option>
-        <option value="2" type="text">{{ _('Coche pequeño (entre 8 y 12 caballos fiscales)') }}</option>
-        <option value="3" type="text">{{ _('Coche mediano (entre 12 y 16 caballos fiscales)') }}</option>
-        <option value="4" type="text">{{ _('Coche grande (entre 16 y 20 caballos fiscales)') }}</option>
-        <option value="5" type="text">{{ _('Coche muy grande (más de 20 caballos fiscales)') }}</option>
+        <option value="1" type="text">{{ _('Coche de menos de 8 caballos fiscales') }}</option>
+        <option value="2" type="text">{{ _('Coche de entre 8 y 11,99 caballos fiscales') }}</option>
+        <option value="3" type="text">{{ _('Coche de entre 12 y 15,99 caballos fiscales') }}</option>
+        <option value="4" type="text">{{ _('Coche de entre 16 y 19,99 caballos fiscales') }}</option>
+        <option value="5" type="text">{{ _('Coche de más de 20 caballos fiscales') }}</option>
       </select>
     </div>
     <div class="select-info">{{ _('Impuesto a vehículos motorizados') }}: <span id="select-vehicle-tax"></span></div>
     <div class="checkbox">
       <label>
-        <input id="check-vehicle-new" type="checkbox">{{ _('El vehículo tiene menos de 5 años') }}
+        <input id="check-vehicle-bonus" type="checkbox">{{ _('Vehículo con bonificaciones') }}
       </label>
     </div>
     <div class="form-group select-vehicle-bonus-cont" style="display: none">
-      <label for="select-vehicle-bonus">{{ _('Emisiones vehículo') }}</label>
+      <label for="select-vehicle-bonus">{{ _('Tipo de bonificación vehículo') }}</label>
       <select id="select-vehicle-bonus" class="form-control">
-        <option value="0" type="text" selected="selected">{{ _('menos de 50gr/km de CO2') }}</option>
-        <option value="1" type="text">{{ _('entre 51gr/km y 100gr/km de CO2') }}</option>
-        <option value="2" type="text">{{ _('entre 101gr/km y 120gr/km de CO2') }}</option>
-        <option value="3" type="text">{{ _('más de 120gr/km de CO2') }}</option>
+        <option value="0" type="text" selected="selected">{{ _('Vehículo de carácter histórico') }}</option>
+        <option value="1" type="text">{{ _('Vehículo de más de 25 años') }}</option>
+        <option value="2" type="text">{{ _('Emisiones por debajo de 100gr/km de CO2') }}</option>
+        <option value="3" type="text">{{ _('Vehículo eficiente por debajo de 100gr/km de CO2') }}</option>
       </select>
     </div>
   </div>
     
   <div class="row">
     <div class="form-group">
-      <label for="select-extra-vehicle">{{ _('Vehículo adicional') }}</label>
+      <label for="select-extra-vehicle">{{ _('¿Tienes un vehículo adicional?') }}</label>
       <select id="select-extra-vehicle" class="form-control">
         <option value="0" type="text" selected="selected">{{ _('Ninguno') }}</option>
-        <option value="1" type="text">{{ _('Coche muy pequeño (menos de 8 caballos fiscales)') }}</option>
-        <option value="2" type="text">{{ _('Coche pequeño (entre 8 y 12 caballos fiscales)') }}</option>
-        <option value="3" type="text">{{ _('Coche mediano (entre 12 y 16 caballos fiscales)') }}</option>
-        <option value="4" type="text">{{ _('Coche grande (entre 16 y 20 caballos fiscales)') }}</option>
-        <option value="5" type="text">{{ _('Coche muy grande (más de 20 caballos fiscales)') }}</option>
+        <option value="1" type="text">{{ _('Coche de menos de 8 caballos fiscales') }}</option>
+        <option value="2" type="text">{{ _('Coche de entre 8 y 11,99 caballos fiscales') }}</option>
+        <option value="3" type="text">{{ _('Coche de entre 12 y 15,99 caballos fiscales') }}</option>
+        <option value="4" type="text">{{ _('Coche de entre 16 y 19,99 caballos fiscales') }}</option>
+        <option value="5" type="text">{{ _('Coche de más de 20 caballos fiscales') }}</option>
       </select>
     </div>
     <div class="select-info">{{ _('Impuesto a vehículos motorizados') }}: <span id="select-extra-vehicle-tax"></span></div>
     <div class="checkbox">
       <label>
-        <input id="check-extra-vehicle-new" type="checkbox">{{ _('El vehículo adicional tiene menos de 5 años') }}
+        <input id="check-extra-vehicle-bonus" type="checkbox">{{ _('Vehículo con bonificaciones') }}
       </label>
     </div>
     <div class="form-group select-extra-vehicle-bonus-cont" style="display: none">
-      <label for="select-extra-vehicle-bonus">{{ _('Emisiones vehículo adicional') }}</label>
+      <label for="select-extra-vehicle-bonus">{{ _('Tipo de bonificación vehículo adicional') }}</label>
       <select id="select-extra-vehicle-bonus" class="form-control">
-        <option value="0" type="text" selected="selected">{{ _('menos de 50gr/km de CO2') }}</option>
-        <option value="1" type="text">{{ _('entre 51gr/km y 100gr/km de CO2') }}</option>
-        <option value="2" type="text">{{ _('entre 101gr/km y 120gr/km de CO2') }}</option>
-        <option value="3" type="text">{{ _('más de 120gr/km de CO2') }}</option>
+        <option value="0" type="text" selected="selected">{{ _('Vehículo de carácter histórico') }}</option>
+        <option value="1" type="text">{{ _('Vehículo de más de 25 años') }}</option>
+        <option value="2" type="text">{{ _('Emisiones por debajo de 100gr/km de CO2') }}</option>
+        <option value="3" type="text">{{ _('Vehículo eficiente por debajo de 100gr/km de CO2') }}</option>
       </select>
     </div>
   </div>
@@ -93,6 +116,11 @@
       </select>
     </div>
     <div class="select-info">{{ _('Tasa') }}: <span id="select-parking-tax"></span></div>
+    <div class="checkbox">
+      <label>
+        <input id="check-parking-plates" type="checkbox">{{ _('Tiene placas de vado') }}
+      </label>
+    </div>
   </div>
 
   <div class="row">
@@ -100,9 +128,9 @@
       <label for="select-payment-method">{{ _('¿Cómo realizas el pago?') }}</label>
       <select id="select-payment-method" class="form-control">
         <option value="0" type="text" selected="selected">{{ _('Domiciliación Bancaria') }}</option>
-        <option value="1" type="text">{{ _('Pago Anticipado') }}</option>
+<!--        <option value="1" type="text">{{ _('Pago Anticipado') }}</option>
         <option value="2" type="text">{{ _('Sistema Especial pagos') }}</option>
-        <option value="3" type="text">{{ _('Ninguna de las anteriores') }}</option>
+-->        <option value="1" type="text">{{ _('Ninguna de las anteriores') }}</option>
       </select>
     </div>
     <div class="select-info">{{ _('Bonificación por modo de pago') }}: <span id="select-payment-bonus"></span></div>
@@ -112,6 +140,6 @@
 
 <div id="tax-amount">
   <p>{{ _('Contribuyes con un total de <b id="tax-amount-paid"></b> a los presupuestos del Gobierno de Aragón')|safe }}.</p>
-  <p><small>{{ _('Esta estimación del cálculo es meramente orientativa. Si la cuota a pagar de IBI en 2016 le saliese superior a la del año anterior, también tiene derecho a una bonificación especifica que puede consultar en la <a href="http://www.valdemoro.es/documents/20912/92dd9636-672b-4b6a-a94f-8ada80283962" target="_blank">Ordenanza</a>')|safe }}</small></p>
-  <p><small>{{ _('Para más información puede consultar las <a href="http://www.valdemoro.es/ordenanzas-fiscales" target="_blank">Ordenanzas fiscales</a>, la <a href="http://www.valdemoro.es/documents/20912/58278119-5c7e-482e-94ae-6c1a4e4090d3" target="_blank">Ordenanza General</a>, la <a href="http://www.valdemoro.es/documents/20912/9382f882-65f1-4006-a981-32171f2fa9ac" target="_blank">Ordenanza de Vehículos</a> o la <a href="http://www.valdemoro.es/documents/20912/357c1766-4349-40db-89bf-f8a06416d56e" target="_blank">Ordenanza de Vados</a>')|safe }}</small></p>
+  <p><small>{{ _('Esta estimación del cálculo es meramente orientativa.')|safe }}</small></p>
+  <p><small>{{ _('Para más información puedes consultar las <a href="https://sede.valdemoro.es/ordenanzas-fiscales" target="_blank">Ordenanzas fiscales</a>, la <a href="https://sede.valdemoro.es/documents/10180/879972/ORDENANZA+GENERAL+DE+GESTI%C3%93N%2C%20INSPECCI%C3%93N+Y+RECAUDACI%C3%93N+DE+LOS+TRIBUTOS+Y+OTROS+INGRESOS+DE+DERECHO+P%C3%9ABLICO+LOCALES.pdf/031a5e7c-17c8-48ae-9354-8660c1beecb9" target="_blank">Ordenanza General</a>, la <a href="https://sede.valdemoro.es/documents/10180/879972/3.+ORDENANZA+FISCAL+REGULADORA+DEL+IMPUESTO+SOBRE+VEHICULOS+DE+TRACCION+MECANICA.pdf/0e2b17a4-38ed-4319-b75b-fc6c53a20811" target="_blank">Ordenanza de Vehículos</a> o la <a href="https://sede.valdemoro.es/documents/10180/879972/13.+ORDENANZA+FISCAL+REGULADORA+DE+LA+TASA+POR+ENTRADA+DE+VEHICULOS+A+TRAVES+DE+LAS+ACERAS+Y+RESERVA+DE+VIA+PUBLICA.pdf/a56b0908-fbf2-40a6-b5df-d4decc5d31fc" target="_blank">Ordenanza de Vados</a>')|safe }}</small></p>
 </div>  
