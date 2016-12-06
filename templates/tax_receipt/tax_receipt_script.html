@@ -17,26 +17,36 @@
 
     function getHouseTaxPaid() {
       var val = $("#select-house").val();
-      var bonus = [0, 0.5, 0.5, 0.5, 0.5, 0.6, 0.5, 0.9, 0.7][$("#select-house-bonus").val()];
-      return (val*0.0075)*(1-bonus);
+      var bonus = [0, 0.5, 0.5, 0.6, 0.4, 0.25, 0.9, 0.5, 0.3][$("#select-house-bonus").val()];
+      return (val*0.00585)*(1-bonus);
+    }
+    function getGarbageTaxPaid() {
+      var val = [0, 72][$("#select-garbage").val()];
+      var bonus = ($('#check-garbage-bonus').is(':checked')) ? 0.5 : 0;
+      return val*(1-bonus);
     }
     function getVehicleTaxPaid() {
-      var val = [0, 12.62, 34.08, 71.94, 89.61, 112][$("#select-vehicle").val()];
-      var bonus = ($('#check-vehicle-new').is(':checked')) ? [0.75, 0.4, 0.2, 0][$("#select-vehicle-bonus").val()] : 0;
+      var val = [0, 21.86, 59.02, 123.08, 168.36, 210.42][$("#select-vehicle").val()];
+      var bonus = ($('#check-vehicle-bonus').is(':checked')) ? [0.9, 0.5, 0.4, 0.75][$("#select-vehicle-bonus").val()] : 0;
       return val*(1-bonus);
     }
     function getExtraVehicleTaxPaid() {
-      var val = [0, 12.62, 34.08, 71.94, 89.61, 112][$("#select-extra-vehicle").val()];
-      var bonus = ($('#check-extra-vehicle-new').is(':checked')) ? [0.75, 0.4, 0.2, 0][$("#select-extra-vehicle-bonus").val()] : 0;
+      var val = [0, 21.86, 59.02, 123.08, 168.36, 210.42][$("#select-extra-vehicle").val()];
+      var bonus = ($('#check-extra-vehicle-bonus').is(':checked')) ? [0.9, 0.5, 0.4, 0.75][$("#select-extra-vehicle-bonus").val()] : 0;
       return val*(1-bonus);
     }
     function getParkingTaxPaid() {
-      return [0, 9.39, 43.24][$("#select-parking").val()];
+      var val = [0, 10.10, 42.075][$("#select-parking").val()];
+      var bonus = ($('#check-parking-plates').is(':checked')) ? [0, 1.2, 1.4][$("#select-parking").val()] : 1;
+      return val*bonus;
     }
 
     function redrawGrid() {
       var houseTaxPaid = getHouseTaxPaid();
       $('#select-house-tax').text(formatTaxAmount(houseTaxPaid));
+
+      var garbageTaxPaid = getGarbageTaxPaid();
+      $('#select-garbage-tax').text(formatTaxAmount(garbageTaxPaid));
 
       var vehicleTaxPaid = getVehicleTaxPaid();
       $('#select-vehicle-tax').text(formatTaxAmount(vehicleTaxPaid));
@@ -47,10 +57,10 @@
       var parkingTaxPaid = getParkingTaxPaid();
       $('#select-parking-tax').text(formatTaxAmount(parkingTaxPaid));
 
-      var bonusPayment = [0.025, 0.05, 0.01, 0][$('#select-payment-method').val()];
-      var bonusMax = [300, 500, 100, 0][$('#select-payment-method').val()];
+      var bonusPayment = [0.05, 0][$('#select-payment-method').val()];
+      var bonusMax = [500, 0][$('#select-payment-method').val()];
 
-      totalTaxPaid = houseTaxPaid + vehicleTaxPaid + extraVehicleTaxPaid + parkingTaxPaid;
+      totalTaxPaid = houseTaxPaid + garbageTaxPaid + vehicleTaxPaid + extraVehicleTaxPaid + parkingTaxPaid;
       
       bonusPaymentAmount = totalTaxPaid * bonusPayment
 
@@ -84,22 +94,22 @@
     }
     $("#scenario-1").click(function() { setStatus(0, 1, 2, 0, 0); redrawGrid(); return false; });
     $("#scenario-2").click(function() { setStatus(1, 1, 2, 1, 1); redrawGrid(); return false; });
-    $("#scenario-3").click(function() { setStatus(2, 0, 0, 2, 0); redrawGrid(); return false; });
-    $("#scenario-4").click(function() { setStatus(3, 1, 2, 3, 2); redrawGrid(); return false; });
+    $("#scenario-3").click(function() { setStatus(2, 0, 0, 1, 0); redrawGrid(); return false; });
+    $("#scenario-4").click(function() { setStatus(3, 1, 2, 1, 2); redrawGrid(); return false; });
 
     var breakdown = {{ breakdown.to_json( labels=descriptions['functional'] )|safe }};
     var gridData = breakdownToTable(breakdown);
     var getBreakdownValue = getBreakdownValueFunction('expense', '{{ latest_budget.name()|safe }}');
     var myGrid;
 
-    $('#check-vehicle-new').change(function(){
+    $('#check-vehicle-bonus').change(function(){
       if( $(this).is(':checked') ){
         $('.select-vehicle-bonus-cont').show();
       } else{
         $('.select-vehicle-bonus-cont').hide();
       }
     });
-    $('#check-extra-vehicle-new').change(function(){
+    $('#check-extra-vehicle-bonus').change(function(){
       if( $(this).is(':checked') ){
         $('.select-extra-vehicle-bonus-cont').show();
       } else{
