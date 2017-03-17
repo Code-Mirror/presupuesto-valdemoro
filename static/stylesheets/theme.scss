@@ -20,7 +20,8 @@ header{
 @media (min-width: $screen-sm-min) {
   
   header > .container{
-    background: url(../assets/gobierno-abierto.jpg) no-repeat right center white;
+//    background: url(../assets/gobierno-abierto.jpg) no-repeat right center white;
+  	background: url(../assets/cuentas-claras.png) no-repeat right center white;
   }
 }
 
@@ -32,12 +33,12 @@ header{
 
 .navbar-brand > a{
   display: block;
-  width: 355px;
+  width: 500px;
   height: 37px;
   margin: $grid-gutter-width/6 auto 0;
   text-indent: -9999px;
   overflow: hidden;
-  background: url(../assets/cuentas-claras.jpg) no-repeat center top white;
+  //background: url(../assets/cuentas-claras.png) no-repeat right top white;
 }
 
 .navbar-default .navbar-nav{
@@ -106,16 +107,20 @@ header{
     }
 
     &.option-global .icon{
-      color: #e7b439;
+      //color: #e7b439;
+      color: $brand-terciary;
     }
     &.option-policies .icon{
-      color: #e19c18;
+      //color: #e19c18;
+      color: $brand-terciary;
     }
     &.option-payments .icon{
-      color: #c73915;
+      //color: #c73915;
+      color: $brand-terciary;
     }
     &.option-tax .icon{
-      color: #9a2d19;
+      //color: #9a2d19;
+      color: $brand-terciary;
     }
 
     .option-title:hover h3{
