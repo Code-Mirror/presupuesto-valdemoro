@@ -10,10 +10,10 @@ $gray-light:            lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:          lighten($gray-base, 93.5%) !default; // #eee
 $gray-lightest:         lighten($gray-base, 96%) !default;
 
-$brand-primary:         #043465; //#00486b;
-$brand-secondary:       #fff7e6; //#F7F7F7;
-$brand-terciary:        #C5C5C5;
-$brand-aditional:       #bd2a33;
+$brand-primary:         #003366; //#043465; 
+$brand-secondary:       #dee6ef; //#fff7e6; 
+$brand-terciary:        #dee6ef; //#C5C5C5;
+$brand-aditional:       #b60f1f; //#bd2a33;
 
 $text-color:            #043465; //#414141;
 
@@ -37,7 +37,10 @@ $link-hover-decoration: underline;
 // Typography
 // -------------
 
-$font-family-sans-serif:  "Source Sans Pro", Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+// $font-family-sans-serif:  "Source Sans Pro", Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  "Raleway", sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 $font-family-base:        $font-family-sans-serif;
 
@@ -64,7 +67,7 @@ $container-large-desktop:    (1080px + $grid-gutter-width);
 // Main Entity Logo
 // -------------
 
-$main-entity-logo-width:   220px;
+$main-entity-logo-width:   400px;
 $main-entity-logo-height:  140px;
 
 
