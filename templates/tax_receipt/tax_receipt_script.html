@@ -21,7 +21,7 @@
       return (val*0.00585)*(1-bonus);
     }
     function getGarbageTaxPaid() {
-      var val = [0, 72][$("#select-garbage").val()];
+      var val = [0, 52][$("#select-garbage").val()];
       var bonus = ($('#check-garbage-bonus').is(':checked')) ? 0.5 : 0;
       return val*(1-bonus);
     }
